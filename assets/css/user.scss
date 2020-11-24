@@ -1,0 +1,244 @@
+$headercolor: #e9e9e9;
+$bordercolor: #666666;
+$red: #ff0f0f9f;
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+a,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+label,
+li,
+p,
+strong,
+textarea {
+    color: #000000;
+    line-height: 1.4;
+    text-rendering: optimizeLegibility;
+    font-family: 'New Century Schoolbook', 'TeX Gyre Schola', serif;
+}
+
+
+header {
+    background: $headercolor;
+    width: 100%;
+    height: 180px;
+
+    >div {
+        display: flex;
+        justify-content: space-between;
+
+        >img {
+            width: 143px;
+            height: 143px;
+            margin: 18px 0 19px 20px;
+        }
+
+        >div button#logout {
+            height: 80px;
+            width: 198px;
+            margin: 50px 40px 0 0;
+            background-color: #33CCFF;
+            border-radius: 100px;
+        }
+    }
+}
+
+
+nav {
+    float: left;
+
+
+    >section {
+        margin: 20px 20px auto 20px;
+        padding: 34px 36px 24px 36px;
+        border: solid 1px $bordercolor;
+
+        >ul {
+            list-style-type: none;
+
+            >li {
+                text-align: center;
+                margin-bottom: 10px;
+
+
+                button {
+                    width: 158px;
+                    height: 64px;
+                    border-radius: 25px;
+                    border: solid 1px $bordercolor;
+                }
+            }
+        }
+    }
+}
+
+main {
+    float: left;
+
+    .content {
+        height: 860px;
+        width: 1610px;
+        margin: 20px auto 10px 0px;
+        float: left;
+
+        img {
+            height: 120px;
+            width: 120px;
+            margin: 38px 25px 38px 83px;
+            float: left;
+            border: solid 1px $bordercolor;
+        }
+
+        h1 {
+            margin: 65px 0px;
+        }
+
+        .container {
+            border: solid 1px $bordercolor;
+            margin: 0px 10px 10px 10px;
+            float: left;
+
+            .logs {
+                height: 534px;
+                width: 1444px;
+                padding: 10px;
+                margin: 60px 73px;
+                border: 1px solid $bordercolor;
+                font: 16px/26px Georgia, Garamond, Serif;
+                overflow: auto;
+            }
+
+            button {
+                width: 158px;
+                height: 64px;
+                border-radius: 25px;
+                border: solid 1px $bordercolor;
+                margin: 10px 30%;
+            }
+
+            .table {
+                height: 534px;
+                width: 1444px;
+                padding: 10px;
+                margin: 0px 73px 60px 73px;
+                border: 1px solid $bordercolor;
+                font: 16px/26px Georgia, Garamond, Serif;
+                overflow: auto;
+
+                table {
+                    border-collapse: collapse;
+                    width: 100%;
+
+
+                    th,
+                    td {
+                        text-align: center;
+                        padding: 8px;
+                        border: solid 1px $bordercolor;
+
+
+                    }
+
+                    td#no {
+                        background-color: $red;
+                    }
+
+                    td#admin {
+                        background-color: rgba(0, 0, 255, 0.13);
+                    }
+
+                    td#arts {
+                        background-color: rgba(255, 0, 0, 0.13);
+                    }
+
+                    td#apotheek {
+                        background-color: rgba(0, 255, 0, 0.13);
+                    }
+
+                    tr:nth-child(even) {
+                        background-color: #f2f2f2;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+footer {
+    padding: 8px;
+    text-align: center;
+    width: 100%;
+    height: auto;
+
+    a {
+        color: black;
+
+    }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #66666620;
+    backdrop-filter: blur(5px);
+
+
+    >.medModal-container {
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 700px;
+
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+
+
+            th,
+            td {
+                text-align: center;
+                padding: 8px;
+                // border: solid 1px $bordercolor;
+
+                input[type=submit] {
+                    height: 50px;
+                    width: 100px;
+                    border-radius: 25px;
+                    border: solid 1px $bordercolor;
+                }
+            }
+        }
+        
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            &:focus,
+            &:hover {
+                color: black;
+                text-decoration: none;
+                cursor: pointer;
+            }
+        }
+    }
+}
