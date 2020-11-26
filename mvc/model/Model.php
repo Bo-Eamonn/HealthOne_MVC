@@ -74,14 +74,13 @@ class Model
     }    
 
 //Create New User
-    public function createUser($uname, $pswrd, $cat, $catDesc){
+    public function createUser($uname, $pswrd, $role){
         $this->connectDb();
-        if ($uname !='' && $pswrd != '' && $cat !='' && $catDesc !='') {
-            $query = $this->db->prepare("INSERT INTO `users` (`id`, `uname`, `pswrd`, `cat`, `catDesc`) VALUES ('',:uname, :pswrd, :cat, :catDesc)");
+        if ($uname !='' && $pswrd != '' && $role !='') {
+            $query = $this->db->prepare("INSERT INTO `users` (`id`, `uname`, `pswrd`, `role`, ) VALUES ('',:uname, :pswrd, :role, )");
             $query->bindParam(":uname", $uname); 
             $query->bindParam(":pswrd", $pswrd); 
-            $query->bindParam(":cat", $cat); 
-            $query->bindParam(":catDesc", $catDesc); 
+            $query->bindParam(":role", $role); 
             $result = $query->execute();
             return $result;
         }
@@ -98,15 +97,13 @@ class Model
         return null;
     }
 //Update User
-    public function updateUser($id, $uname, $pswrd, $cat, $catDesc){
+    public function updateUser($id, $uname, $pswrd, $role){
         $this->connectDb();
-        if ($uname !='' && $pswrd != '' && $cat !='' && $catDesc !='') {
-            $query = $this->db->prepare("UPDATE `users` SET `name`=:uname, `pswrd`=:pswrd, `cat`=:cat, `catDesc`=:catDesc WHERE `users`.`id`=:id");
+        if ($uname !='' && $pswrd != '' && $role !='') {
+            $query = $this->db->prepare("UPDATE `users` SET `name`=:uname, `pswrd`=:pswrd, `role`=:role,  WHERE `users`.`id`=:id");
             $query->bindParam(":id", $id);
             $query->bindParam(":uname", $uname); 
-            $query->bindParam(":pswrd", $pswrd); 
-            $query->bindParam(":cat", $cat); 
-            $query->bindParam(":catDesc", $catDesc);  
+            $query->bindParam(":pswrd", $pswrd);  
             $result = $query->execute();
             return $result;
         }

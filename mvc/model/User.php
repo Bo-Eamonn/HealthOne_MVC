@@ -7,21 +7,20 @@ class User
     private $id;
     private $uname;
     private $pswrd;
-    private $cat;
-    private $catDesc;
+    private $role;
     
-
-    public function __get($property) {
-        if (property_exists($this, $property)) {
-            return $this->$property;
-        }
+    public function getId(){
+        return $this->id;
     }
-
-    public function __set($property, $value) {
-        if (property_exists($this, $property)) {
-            $this->$property = $value;
-        }
-        return $this;
+    public function getUname(){
+        return $this->uname;
     }
-
+    public function getPswrd(){
+        return $this->pswrd;
+    }
+    public function getRole(){
+        return $this->role;
+    }
 }
+
+
