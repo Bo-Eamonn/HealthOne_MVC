@@ -1,12 +1,12 @@
 <?php
 
-namespace model;
+namespace mvc\model;
 
 use PDO;
 
 include_once ('mvc/model/Med.php');
 include_once ('mvc/model/Patient.php');
-include_once ('mvc/model/Users.php');
+include_once ('mvc/model/User.php');
  
 class Model
 {
@@ -31,9 +31,10 @@ class Model
     }
 //Read Med
     public function getMed(){
+        $this->connectDb();
         $select = $this->db->query('SELECT * FROM `med` ');
         if ($select) {
-            $result=$select->fetchALL(PDO::FETCH_CLASS,\model\Med::class);
+            $result=$select->fetchALL(PDO::FETCH_CLASS,Med::class);
             return $result;
         }
         return null;      
@@ -66,7 +67,7 @@ class Model
         $select->bindParam(":id", $id);
         $result = $select->execute();
         if ($result) {
-            $select->setFetchMode(PDO::FETCH_CLASS,\model\Med::class);
+            $select->setFetchMode(PDO::FETCH_CLASS,Med::class);
             $med = $select->fetch();
             return $med;
         }
@@ -91,7 +92,7 @@ class Model
         $this->connectDb();
         $select = $this->db->query('SELECT * FROM `users` ');
         if ($select) {
-            $result=$select->fetchALL(PDO::FETCH_CLASS,\model\User::class);
+            $result=$select->fetchALL(PDO::FETCH_CLASS,User::class);
             return $result;
         }
         return null;
@@ -123,7 +124,7 @@ class Model
         $select->bindParam(":id", $id);
         $result = $select->execute();
         if ($result) {
-            $select->setFetchMode(PDO::FETCH_CLASS,\model\User::class);
+            $select->setFetchMode(PDO::FETCH_CLASS,User::class);
             $med = $select->fetch();
             return $med;
         }
@@ -153,7 +154,7 @@ class Model
         $this->connectDb();
         $select = $this->db->query('SELECT * FROM `patients` ');
         if ($select) {
-            $result=$select->fetchALL(PDO::FETCH_CLASS,\model\User::class);
+            $result=$select->fetchALL(PDO::FETCH_CLASS,User::class);
             return $result;
         }
         return null;
@@ -192,7 +193,7 @@ class Model
         $select->bindParam(":id", $id);
         $result = $select->execute();
         if ($result) {
-            $select->setFetchMode(PDO::FETCH_CLASS,\model\User::class);
+            $select->setFetchMode(PDO::FETCH_CLASS,User::class);
             $med = $select->fetch();
             return $med;
         }
