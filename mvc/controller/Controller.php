@@ -7,6 +7,8 @@ include_once "mvc/model/Patient.php";
 use mvc\model\Patient;
 include_once "mvc/model/Med.php";
 use mvc\model\Med;
+include_once "mvc/model/User.php";
+use mvc\model\User;
 include_once "mvc/model/Model.php";
 use mvc\model\Model;
 
