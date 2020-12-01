@@ -12,14 +12,16 @@ class View{
     public function __construct($model){
         $this->model = $model;
     }
-    
+    public function login(){
+        require ('templates/login/login.php');
+    }
     public function showMed($result){
         require ('templates/med/showMed.php');
     }
-    public function showUsers(){
+    public function showUsers($result){
         require ('templates/user/showUser.php');
     }
-    public function showPatients(){
+    public function showPatients($result){
         require ('templates/patient/showPatient.php');
     }
 
