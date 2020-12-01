@@ -32,8 +32,8 @@ require_once "templates/nav.php";
                             echo "</tr>";                       
                                 foreach ($result as $user) {
                                 echo "<tr>";    
-                                    echo "<td>" . $user->uname . " </td>";
-                                    echo "<td>" . $user->role . " </td>";
+                                    echo "<td>" . $user->getUname() . " </td>";
+                                    echo "<td>" . $user->getRole() . " </td>";
                                     echo "<td>" . "<a title='Edit'><i class='fa fa-pen' aria-hidden='true'></i></a>
                                                                                <a title='Delete'><i class='fa fa-trash' aria-hidden='true'></i></a>" . " </td>";
                                 echo "</tr>";
