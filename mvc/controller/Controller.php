@@ -19,6 +19,10 @@ class Controller{
         $this->model = new Model();
         $this->view = new View($this->model);
     }
+    public function login(){
+    $this->view->login();    
+    }
+
     public function showMedAction(){
         $result = $this->model->getMed();
         $this->view->showMed($result);
