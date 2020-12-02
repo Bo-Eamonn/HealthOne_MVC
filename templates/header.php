@@ -12,7 +12,7 @@
             </div>
             <div>
                 <button id="logout" title="uitloggen"
-                    onclick="location.href=' '">Uitloggen</button>
+                    onclick="location.href='/healthone_mvc/logout.php'">Uitloggen</button>
             </div>
         </div>
     </header>
