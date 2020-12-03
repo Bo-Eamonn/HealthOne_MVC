@@ -19,10 +19,6 @@ class Controller{
         $this->model = new Model();
         $this->view = new View($this->model);
     }
-    public function login(){
-    $this->view->login();    
-    }
-
     public function showMedAction(){
         $result = $this->model->getMed();
         $this->view->showMed($result);
@@ -35,6 +31,19 @@ class Controller{
         $result = $this->model->getPatients();
         $this->view->showPatients($result);
     }
-
-
+    public function loginAction()
+    {
+        if (isset($_POST['username']) && isset($_POST['password'])) {
+            $username = filter_input(INPUT_POST, 'username');
+            $password = filter_input(INPUT_POST, 'password');
+            $this->model->login($username, $password);
+        } else {
+            $this->view->showLogin();
+        }
+    }
+    public function logoutAction()
+    {
+        $this->model->logout($_SESSION);
+        
+    }
 }

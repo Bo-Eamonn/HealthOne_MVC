@@ -12,7 +12,7 @@ class View{
     public function __construct($model){
         $this->model = $model;
     }
-    public function login(){
+    public function showLogin(){
         require ('templates/login/login.php');
     }
     public function showMed($result){
