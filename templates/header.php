@@ -11,8 +11,10 @@
                 <div class="result"></div>
             </div>
             <div>
-                <button id="logout" title="uitloggen"
-                    onclick="location.href='/healthone_mvc/logout.php'">Uitloggen</button>
+                <form action="index.php" method="post">
+                    <input type="hidden" name="logout" value="0">
+                    <input type="submit" id="logout" value="Uitloggen">
+                </form>
             </div>
         </div>
     </header>

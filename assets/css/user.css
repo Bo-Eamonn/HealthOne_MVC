@@ -46,7 +46,7 @@ header > div > img {
   margin: 18px 0 19px 20px;
 }
 
-header > div > div button#logout {
+header > div > div input#logout {
   height: 80px;
   width: 198px;
   margin: 50px 40px 0 0;
@@ -87,7 +87,7 @@ main {
 main .content {
   height: 860px;
   width: 1610px;
-  margin: 20px auto auto 0px;
+  margin: 20px auto 10px 0px;
   float: left;
 }
 
