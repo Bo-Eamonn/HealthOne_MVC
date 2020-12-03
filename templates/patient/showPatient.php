@@ -20,6 +20,7 @@ require_once "templates/nav.php";
             <?php
             ?>
             <div class="container">
+                <button>toevoegen</button>
                 <div class="table">
                     <?php
                             echo "<table>";

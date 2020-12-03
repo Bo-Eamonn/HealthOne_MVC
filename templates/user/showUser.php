@@ -21,13 +21,14 @@ require_once "templates/nav.php";
             
             ?>
             <div class="container">
+                <button>Toevoegen</button>
                 <div class="table">
                     <?php
                         
                             echo "<table>";
                             echo "<tr>";     
                                 echo "<th>Naam</th>";                       
-                                echo "<th>Categorie</th>";   
+                                echo "<th>Role</th>";   
                                 echo "<th>Edit</th>";   
                             echo "</tr>";                       
                                 foreach ($result as $user) {
