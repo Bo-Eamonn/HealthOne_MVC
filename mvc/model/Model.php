@@ -19,16 +19,16 @@ class Model
 //Login
     public function login($uname, $pswrd){
         $this->connectDb();
-        $selection = $this->database->prepare("SELECT * FROM users WHERE uname = :user AND pswrd = :pass");
+        $selection = $this->db->prepare("SELECT * FROM users WHERE uname = :user AND pswrd = :pswrd");
         $selection->bindParam("user", $uname);
-        $selection->bindParam("pass", $pswrd);
+        $selection->bindParam("pswrd", $pswrd);
         $result = $selection->execute();
         if($result) {
             $selection->setFetchMode(\PDO::FETCH_CLASS, \model\User::class);
             $user = $selection->fetch();
             if ($user) {
                 $gehashtpassword = strtoupper(hash("sha1", $pswrd));
-    var_dump($gehashtpassword);
+    // var_dump($gehashtpassword);
                 if ($user->getPassword() == $gehashtpassword) {
                     $_SESSION['user'] = $user->getUsername();
                     $_SESSION['role'] = $user->getRole();

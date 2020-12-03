@@ -33,10 +33,10 @@ class Controller{
     }
     public function loginAction()
     {
-        if (isset($_POST['username']) && isset($_POST['password'])) {
-            $username = filter_input(INPUT_POST, 'username');
-            $password = filter_input(INPUT_POST, 'password');
-            $this->model->login($username, $password);
+        if (isset($_POST['uname']) && isset($_POST['pswrd'])) {
+            $uname = filter_input(INPUT_POST, 'uname');
+            $pswrd = filter_input(INPUT_POST, 'pswrd');
+            $this->model->login($uname, $pswrd);
         } else {
             $this->view->showLogin();
         }
