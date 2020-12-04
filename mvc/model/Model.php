@@ -42,6 +42,18 @@ class Model
     header("location: /healthone_mvc/");
     exit;
     }
+
+//Read Home
+
+public function getHome(){
+    if ($_SESSION['login'] == true) {
+    $text = "Last Login ";
+    $date = date("F j, Y, g:i a");
+    $result = $text.$date;
+    return $result;
+    }
+    return null;
+}
 //Create New Med
     public function createMed($name,$cat,$insured){
         $this->connectDb();

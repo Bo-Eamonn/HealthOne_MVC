@@ -24,5 +24,7 @@ class View{
     public function showPatients($result){
         require ('templates/patient/showPatient.php');
     }
-
+    public function showHome(){ 
+        require ('templates/login/showHome.php');
+    }
 }

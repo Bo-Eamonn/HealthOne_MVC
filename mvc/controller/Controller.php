@@ -41,10 +41,13 @@ class Controller{
             $this->view->showLogin();
         }
     }
-    public function logoutAction()
-    {
+    public function logoutAction(){
         $this->model->logout();
         $this->view->showLogin();
         
+    }
+    public function showHomeAction(){
+        $this->model->getHome();
+        $this->view->showHome();
     }
 }
