@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 26, 2020 at 04:16 PM
+-- Generation Time: Dec 04, 2020 at 01:26 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `healthone`
 --
-CREATE DATABASE IF NOT EXISTS `healthone` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `healthone`;
 
 -- --------------------------------------------------------
 
@@ -102,9 +100,9 @@ INSERT INTO `med` (`id`, `name`, `cat`, `insured`) VALUES
 CREATE TABLE `patients` (
   `id` int(11) NOT NULL,
   `naam` varchar(50) NOT NULL,
-  `huidigeMed` varchar(255) NOT NULL,
-  `medHis` varchar(255) NOT NULL,
-  `notes` varchar(255) NOT NULL,
+  `huidigeMed` text NOT NULL,
+  `medHis` text NOT NULL,
+  `notes` mediumtext NOT NULL,
   `adres` varchar(100) NOT NULL,
   `woonplaats` varchar(50) NOT NULL,
   `zknummer` varchar(12) NOT NULL,
@@ -117,7 +115,8 @@ CREATE TABLE `patients` (
 --
 
 INSERT INTO `patients` (`id`, `naam`, `huidigeMed`, `medHis`, `notes`, `adres`, `woonplaats`, `zknummer`, `geboortedatum`, `soortVerzekering`) VALUES
-('', 'Bo-Eamonn de Snoo', '', '', '', 'Timboektoe 69', 'Ver weg', '5436798', '10-11-2001', 'All IN');
+(25, 'anton hensbergen', '', '', '', 'tinburg 12', 'VOORBURG', 'zk 222', '1-1-1970', 'all in'),
+(26, 'Bo-eamonn', '', '', '', 'johan 11', 'Hoek Van Holland', '436785', '10-11-2001', 'all in');
 
 -- --------------------------------------------------------
 
@@ -129,7 +128,7 @@ CREATE TABLE `users` (
   `id` int(5) NOT NULL,
   `uname` varchar(255) NOT NULL,
   `pswrd` varchar(255) NOT NULL,
-  `role` int(5) NOT NULL
+  `role` varchar(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -137,7 +136,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `uname`, `pswrd`, `role`) VALUES
-(1, 'Bo-Eamonn', '9d4e1e23bd5b727046a9e3b4b7db57bd8d6ee684', 3);
+(1, 'Bo-Eamonn', '8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918', 'admin');
 
 --
 -- Indexes for dumped tables
@@ -169,13 +168,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `med`
 --
 ALTER TABLE `med`
-  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
 -- AUTO_INCREMENT for table `patients`
 --
 ALTER TABLE `patients`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `users`
