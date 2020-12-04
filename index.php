@@ -4,16 +4,16 @@ use mvc\controller\Controller;
 
 include_once "mvc/controller/Controller.php"; 
 $controller = new Controller();
+session_start();
 
-if(isset($_SESSION['role']) && $_SESSION['role'] === 'admin')
+if(isset($_SESSION['role']) && $_SESSION['role']=="admin")
 {
-    if(isset($_POST['showForm']))
-    {
-        $controller->showUserAction($result);
-    }else{
-        $controller->showMedAction();
-    }
-
-} else {
+    echo "Succes";
+    // $controller->showMedAction();
+    // $controller->showUserAction();
+    // $controller->showPatientAction();
+    
+} 
+else {
     $controller->loginAction();
 }

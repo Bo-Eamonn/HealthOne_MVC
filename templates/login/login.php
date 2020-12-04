@@ -13,30 +13,7 @@
     <div class="login">
     <img src="/healthone_MVC/assets/images/logo.png" alt="logo">
     <?php
-        // try{
-        //     include ("connectDB.php");
-        //     if(isset($_POST['inloggen'])){
-        //         $username = filter_input(INPUT_POST, "uname", FILTER_SANITIZE_STRING);
-        //         $password = sha1($_POST['pswrd']);
-        //         $query = $db->prepare("SELECT * FROM users WHERE uname = :user AND pswrd = :pass");
-        //         $query->bindParam("user", $username);
-        //         $query->bindParam("pass", $password);
-        //         $query->execute();
-        //         if($query->rowCount() == 1){
-        //             session_start();
-        //             $_SESSION['login'] = true;
-        //             $_SESSION['username'] = $username;
-        //             header('Location: /HealthOne_MVC/home.php');
-        //         } else{
-        //             echo "<p id='wrng'>Onjuiste gegevens!</p>";
-        //         }
-        //         echo "<br>";
-                
-        //     }
-        // }
-        //     catch(PDOException $e){
-        //     die ("Error!: " . $e->getMessage());
-        // }
+     
     ?>
         
         <h1>login</h1>

@@ -43,7 +43,8 @@ class Controller{
     }
     public function logoutAction()
     {
-        $this->model->logout($_SESSION);
+        $this->model->logout();
+        $this->view->showLogin();
         
     }
 }

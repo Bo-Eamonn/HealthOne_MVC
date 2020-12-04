@@ -14,21 +14,20 @@ class Model
 
     private function connectDb(){
         $this->db = new PDO('mysql:host=localhost;dbname=healthone', "root", "");
-
     }
 //Login
     public function login($uname, $pswrd){
         $this->connectDb();
-        $selection = $this->db->prepare("SELECT * FROM users WHERE uname = :user AND pswrd = :pswrd");
-        $selection->bindParam("user", $uname);
-        $selection->bindParam("pswrd", $pswrd);
-        $result = $selection->execute();
+        $query = $this->db->prepare("SELECT * FROM users WHERE uname = :user AND pswrd = :pswrd");
+        $query->bindParam("user", $uname);
+        $query->bindParam("pswrd", $pswrd);
+        $result = $query->execute();
         if($result) {
-            $selection->setFetchMode(\PDO::FETCH_CLASS, \model\User::class);
-            $user = $selection->fetch();
+            $query->setFetchMode(\PDO::FETCH_CLASS, \model\User::class);
+            $user = $query->fetch();
             if ($user) {
-                $gehashtpassword = strtoupper(hash("sha1", $pswrd));
-    // var_dump($gehashtpassword);
+                $gehashtpassword = strtoupper(hash("sha256", $pswrd));
+                // var_dump($gehashtpassword);
                 if ($user->getPassword() == $gehashtpassword) {
                     $_SESSION['user'] = $user->getUsername();
                     $_SESSION['role'] = $user->getRole();
@@ -38,8 +37,7 @@ class Model
     }
 //logout    
     public function logout(){    
-    session_start();
-    $_SESSION = array();
+    session_unset();
     session_destroy();
     header("location: /healthone_mvc/");
     exit;
