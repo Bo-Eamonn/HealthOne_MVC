@@ -64,16 +64,16 @@ nav > section {
   border: solid 1px #666666;
 }
 
-nav > section > ul {
+nav > section > form > ul {
   list-style-type: none;
 }
 
-nav > section > ul > li {
+nav > section > form > ul > li {
   text-align: center;
   margin-bottom: 10px;
 }
 
-nav > section > ul > li button {
+nav > section > form > ul > li input#button {
   width: 158px;
   height: 64px;
   border-radius: 25px;

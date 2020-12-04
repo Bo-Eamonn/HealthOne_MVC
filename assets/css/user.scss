@@ -64,19 +64,22 @@ nav {
         padding: 34px 36px 24px 36px;
         border: solid 1px $bordercolor;
 
-        >ul {
-            list-style-type: none;
+        >form {
 
-            >li {
-                text-align: center;
-                margin-bottom: 10px;
+            >ul {
+                list-style-type: none;
+
+                >li {
+                    text-align: center;
+                    margin-bottom: 10px;
 
 
-                button {
-                    width: 158px;
-                    height: 64px;
-                    border-radius: 25px;
-                    border: solid 1px $bordercolor;
+                    input#button {
+                        width: 158px;
+                        height: 64px;
+                        border-radius: 25px;
+                        border: solid 1px $bordercolor;
+                    }
                 }
             }
         }
@@ -227,12 +230,13 @@ footer {
                 }
             }
         }
-        
+
         .close {
             color: #aaa;
             float: right;
             font-size: 28px;
             font-weight: bold;
+
             &:focus,
             &:hover {
                 color: black;
