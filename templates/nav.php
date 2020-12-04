@@ -1,11 +1,12 @@
 <nav>
-        <section>
+    <section>
+        <form action="home.php" method="post">
             <ul>
-                <li><button onclick="location.href='home.php'"> Home </button></li>
-                <li><button onclick="location.href='medicijnen.php'"> Medicijnen </button></li>
-                <li><button onclick="location.href='patienten.php'"> Patiënten </button></li>
-                <li><button onclick="location.href='gebruikers.php'"> gebruikers </button></li>
-                <li><button onclick="location.href='betalen.php'"> Betalen </button></li>
+                <li><input id="button" type="submit" name="home" value="home"></input></li>
+                <li><input id="button" type="submit" name="med" value="med"></input></li>
+                <li><input id="button" type="submit" name="patient" value="patient"></input></li>
+                <li><input id="button" type="submit" name="user" value="user"></input></li>
             </ul>
-        </section>
-    </nav>
+        </form>
+    </section>
+</nav>
