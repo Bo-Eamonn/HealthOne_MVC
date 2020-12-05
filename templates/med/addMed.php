@@ -1,4 +1,4 @@
-<div id="medAddModal" style="display: block;" class="modal">
+<div id="medAddModal" class="modal">
     <div class="medModal-container">
         <div>
             <span onclick="document.getElementById('medAddModal').style.display='none'" class="close" title="Sluiten">
