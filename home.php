@@ -7,10 +7,11 @@ $controller = new Controller();
 
     session_start();
     if ($_SESSION['login'] == true) {
-        if (isset($_POST['med'])) {
+        if (isset($_POST['logout'])){
+            $controller->logoutAction();
+        }elseif (isset($_POST['med'])) {
             $controller->showMedAction();
-        }
-         elseif (isset($_POST['addMed'])) {
+        }elseif (isset($_POST['addMed'])) {
             $controller->addMedAction();
         } elseif (isset($_POST['user'])) {
             $controller->showUserAction();
