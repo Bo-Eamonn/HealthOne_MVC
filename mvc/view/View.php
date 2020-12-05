@@ -18,6 +18,9 @@ class View{
     public function showMed($result){
         require ('templates/med/showMed.php');
     }
+    public function createMed($result){
+        require ('templates/med/addMed.php');
+    }
     public function showUsers($result){
         require ('templates/user/showUser.php');
     }

@@ -9,6 +9,9 @@ $controller = new Controller();
     if ($_SESSION['login'] == true) {
         if (isset($_POST['med'])) {
             $controller->showMedAction();
+        }
+         elseif (isset($_POST['addMed'])) {
+            $controller->addMedAction();
         } elseif (isset($_POST['user'])) {
             $controller->showUserAction();
         } elseif (isset($_POST['patient'])) {

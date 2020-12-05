@@ -21,6 +21,10 @@ require_once "templates/nav.php";
                
         ?>
         <div class="container">
+
+        <form action="home.php" method="post">
+            <input type="submit" name="addMEd" value="addMed">
+        </form>
             <button onclick="document.getElementById('medAddModal').style.display='block'">Toevoegen</button>
             <div class="table">
                 <?php

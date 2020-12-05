@@ -23,6 +23,13 @@ class Controller{
         $result = $this->model->getMed();
         $this->view->showMed($result);
     }
+    public function addMedAction(){
+        $name = filter_input(INPUT_POST,'name');
+        $cat = filter_input(INPUT_POST,'cat');
+        $insured = filter_input(INPUT_POST,'insured');
+        $result = $this->model->createMed($name, $cat, $insured);
+        $this->view->createMed($result);
+    }
     public function showUserAction(){
         $result = $this->model->getUsers();
         $this->view->showUsers($result);
