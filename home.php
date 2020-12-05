@@ -21,5 +21,5 @@ $controller = new Controller();
             $controller->showHomeAction();
         }
     } else {
-        header('Location: /HealthOne_MVC/');
+        $controller->logoutAction();
     }
