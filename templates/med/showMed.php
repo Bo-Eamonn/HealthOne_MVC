@@ -22,10 +22,9 @@ require_once "templates/nav.php";
         ?>
         <div class="container">
 
-        <form action="home.php" method="post">
-            <input type="submit" name="addMEd" value="addMed">
+        <form action="home.php" method="post">    
+            <button class="add" type="submit" name="showAddMed">Toevoegen</button>
         </form>
-            <button onclick="document.getElementById('medAddModal').style.display='block'">Toevoegen</button>
             <div class="table">
                 <?php
                         
@@ -39,8 +38,10 @@ require_once "templates/nav.php";
                                 echo "<tr>";    
                                     echo "<td id='" . $med->insured."'>" . $med->name . " </td>";
                                     echo "<td id='" . $med->insured."'>" . $med->cat . " </td>";
-                                    echo "<td id='" . $med->insured."'>" . "<a title='Edit'><i class='fa fa-pen' aria-hidden='true'></i></a>
-                                                                               <a title='Delete'><i class='fa fa-trash' aria-hidden='true'></i></a>" . " </td>";
+                                    echo "<td id='" . $med->insured."'>" . "<form action='home.php' method='post'>
+                                    <button class='ud' type='submit' value='$med->id' name='editMed' ><i class='fa fa-pen'></i></button>
+                                    <button class='ud' type='submit' value='$med->id' name='deleteMed' ><i class='fa fa-trash'></i></button>
+                                </form>" . " </td>";
                                 echo "</tr>";
                             }
                             echo "</table>";     

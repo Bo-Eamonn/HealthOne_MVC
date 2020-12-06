@@ -20,7 +20,9 @@ require_once "templates/nav.php";
             <?php
             ?>
             <div class="container">
-                <button>toevoegen</button>
+            <form action="home.php" method="post">    
+            <button class="add" type="submit" name="addPatient">Toevoegen</button>
+        </form>
                 <div class="table">
                     <?php
                             echo "<table>";
@@ -35,8 +37,10 @@ require_once "templates/nav.php";
                                     echo "<td>" . $patient->naam . " </td>";
                                     echo "<td>" . $patient->geboortedatum . " </td>";
                                     echo "<td>" . $patient->zknummer . " </td>";
-                                    echo "<td>" . "<a title='Edit'><i class='fa fa-pen' aria-hidden='true'></i></a>
-                                                    <a title='Delete'><i class='fa fa-trash' aria-hidden='true'></i></a>" . " </td>";
+                                    echo "<td>" . "<form action='home.php' method='post'>
+                                    <button class='ud' type='submit' name='editPatient' ><i class='fa fa-pen'></i></button>
+                                    <button class='ud' type='submit' name='deletetPatient' ><i class='fa fa-trash'></i></button>
+                                </form>" . " </td>";
                                 echo "</tr>";
                             }
                             echo "</table>";
