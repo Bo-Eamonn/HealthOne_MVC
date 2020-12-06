@@ -119,12 +119,29 @@ main .content .container .logs {
   overflow: auto;
 }
 
-main .content .container button {
+main .content .container button.add {
   width: 158px;
   height: 64px;
   border-radius: 25px;
   border: solid 1px #666666;
   margin: 10px 30%;
+}
+
+main .content .container form {
+  margin: inherit;
+  padding: inherit;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+main .content .container form button.ud[type=submit] {
+  background-color: inherit;
+  border: none;
+  margin: 0;
+  padding: 0 10px;
+  width: 0;
+  height: 0;
 }
 
 main .content .container .table {

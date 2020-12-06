@@ -122,12 +122,26 @@ main {
                 overflow: auto;
             }
 
-            button {
+            button.add {
                 width: 158px;
                 height: 64px;
                 border-radius: 25px;
                 border: solid 1px $bordercolor;
                 margin: 10px 30%;
+            }
+            form{
+                margin: inherit;
+                padding: inherit;
+                justify-content: space-evenly;
+                
+            button.ud[type=submit]{
+                background-color: inherit;
+                border: none;
+                margin: 0;
+                padding: 0 10px;
+                width: 0;
+                height: 0;
+            }
             }
 
             .table {
@@ -142,7 +156,6 @@ main {
                 table {
                     border-collapse: collapse;
                     width: 100%;
-
 
                     th,
                     td {
@@ -176,7 +189,6 @@ main {
             }
         }
     }
-
 }
 
 footer {
