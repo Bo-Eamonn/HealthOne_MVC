@@ -43,7 +43,7 @@ class Controller{
     public function editMed() {
         $id = $_POST["editMed"];
         $med = $this->model->getMed($id);
-        $this->view->createMed($med);
+        $this->view->updateMed($med);
 
     }
     public function showUserAction(){

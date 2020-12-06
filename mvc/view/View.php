@@ -24,6 +24,9 @@ class View{
     public function createMed($result){
         require ('templates/med/addMed.php');
     }
+    public function updateMed($result){
+        require ('templates/med/updateMed.php');
+    }
     public function showUsers($result){
         require ('templates/user/showUser.php');
     }
