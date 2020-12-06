@@ -94,7 +94,7 @@ public function getHome(){
     public function deleteMed($id){
         $this->connectDb();
         $select = $this->db->prepare('DELETE FROM `med` WHERE `med`.`id`=:id');
-        $select->bindParam(":id, $id");
+        $select->bindParam(":id", $id);
         $result = $select->execute();
         return $result;
     }
@@ -151,7 +151,7 @@ public function getHome(){
     public function deleteUser($id){
         $this->connectDb();
         $select = $this->db->prepare('DELETE FROM `users` WHERE `users`.`id`=:id');
-        $select->bindParam(":id, $id");
+        $select->bindParam(":id", $id);
         $result = $select->execute();
         return $result;
     }
@@ -220,7 +220,7 @@ public function getHome(){
     public function deletePatient($id){
         $this->connectDb();
         $select = $this->db->prepare('DELETE FROM `patients` WHERE `patients`.`id`=:id');
-        $select->bindParam(":id, $id");
+        $select->bindParam(":id", $id);
         $result = $select->execute();
         return $result;
     }
