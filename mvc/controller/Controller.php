@@ -24,11 +24,27 @@ class Controller{
         $this->view->showMed($result);
     }
     public function addMedAction(){
-        $name = filter_input(INPUT_POST,'name');
-        $cat = filter_input(INPUT_POST,'cat');
-        $insured = filter_input(INPUT_POST,'insured');
-        $result = $this->model->createMed($name, $cat, $insured);
+        $result = "";
         $this->view->createMed($result);
+    }
+    public function saveMed() {
+        $name = filter_input(INPUT_POST,'name');
+        $cat = $_POST["cat"];
+        $insured = filter_input(INPUT_POST,'insured');
+        $this->model->createMed($name, $cat, $insured);
+        $this->showMedAction();
+    }
+    public function deleteMed() {
+        echo "<script> console.log('ik doe echt wel wat'); </script>";
+        $id = $_POST["deleteMed"];
+        $test = $this->model->deleteMed($id);
+        $this->showMedAction();
+    }
+    public function editMed() {
+        $id = $_POST["editMed"];
+        $med = $this->model->getMed($id);
+        $this->view->createMed($med);
+
     }
     public function showUserAction(){
         $result = $this->model->getUsers();
