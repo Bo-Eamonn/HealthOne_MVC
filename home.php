@@ -9,7 +9,7 @@ $controller = new Controller();
     if ($_SESSION['login'] == true) {
         if (isset($_POST['logout'])){
             $controller->logoutAction();
-        }elseif (isset($_POST['med'])) {
+        }elseif (isset($_POST['med']) || isset($_POST['cancelMed'])) {
             $controller->showMedAction();
         }elseif (isset($_POST['showAddMed'])) {
             $controller->addMedAction();

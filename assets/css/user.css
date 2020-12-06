@@ -242,6 +242,8 @@ footer a {
   float: right;
   font-size: 28px;
   font-weight: bold;
+  border: none;
+  background-color: inherit;
 }
 
 .modal > .medModal-container .close:focus, .modal > .medModal-container .close:hover {
