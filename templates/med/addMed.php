@@ -4,7 +4,7 @@
             <span onclick="document.getElementById('medAddModal').style.display='none'" class="close" title="Sluiten">
                 <i class="fa fa-times-circle"></i>
             </span>
-            <form method="POST">
+            <form action="home.php" method="POST">
                 <table>
                     <input type="hidden" name="id" value='' />
                     <tr>
@@ -15,7 +15,7 @@
                     <tr>
                         <td><input type="text" autocomplete="off" name="name" value='' /></td>
                         <td>
-                            <select name="cat[]">
+                            <select name="cat">
                                 <option value="" disabled selected>Maak een keuze</option>
                                 <option value="ADHD-middelen">ADHD-middelen</option>
                                 <option value="Alzheimer-middelen">Alzheimer-middelen</option>
@@ -44,7 +44,7 @@
                     </tr>
                     <tr>
                         <td></td>
-                        <td><input onclick="" type='submit' name='addMed' value='opslaan'></td>
+                        <td><input type='submit' name='toevoegenMed' value='opslaan'></td>
                         <td></td>
                     </tr>
                 </table>
