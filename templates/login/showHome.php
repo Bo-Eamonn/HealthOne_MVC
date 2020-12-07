@@ -18,6 +18,7 @@ require_once "templates/nav.php";
         <div class="content">
             <img src="/healthone_mvc/assets/images/profilePicture/profilePlaceholder.png" alt="Profiel Foto">
             <?php
+                echo "<h1>Welkom: " . $_SESSION['username'] . "</h1>";
             ?>
             <div class="container">
                 <div class="logs">
