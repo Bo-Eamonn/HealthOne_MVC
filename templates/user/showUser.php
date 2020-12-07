@@ -38,8 +38,8 @@ require_once "templates/nav.php";
                                     echo "<td>" . $user->getUname() . " </td>";
                                     echo "<td>" . $user->getRole() . " </td>";
                                     echo "<td><form action='home.php' method='post'>";
-                                    echo "<button class='ud' value='" . $user->setId() ."' type='submit' name='editUser' ><i class='fa fa-pen'></i></button>";
-                                    echo "<button class='ud' value='" . $user->setId() . "' type='submit' name='deleteUser' ><i class='fa fa-trash'></i></button>";
+                                    echo "<button class='ud' value='" . $user->getId() ."' type='submit' name='editUser' ><i class='fa fa-pen'></i></button>";
+                                    echo "<button class='ud' value='" . $user->getId() . "' type='submit' name='deleteUser' ><i class='fa fa-trash'></i></button>";
                                 echo "</form> </td>";
                                 echo "</tr>";
                             }
