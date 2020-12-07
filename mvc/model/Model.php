@@ -115,8 +115,8 @@ public function getHome(){
 //Create New User
     public function createUser($uname, $pswrd, $role){
         $this->connectDb();
-        if ($uname !='' && $pswrd != '' && $role !='') {
-            $query = $this->db->prepare("INSERT INTO `users` (`id`, `uname`, `pswrd`, `role`, ) VALUES ('',:uname, :pswrd, :role, )");
+        if ($uname !='' && $pswrd !='' && $role !='') {
+            $query = $this->db->prepare("INSERT INTO `users` (`id`, `uname`, `pswrd`, `role`) VALUES ('', :uname, :pswrd, :role)");
             $query->bindParam(":uname", $uname); 
             $query->bindParam(":pswrd", $pswrd); 
             $query->bindParam(":role", $role); 

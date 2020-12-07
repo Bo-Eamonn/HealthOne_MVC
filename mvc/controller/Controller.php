@@ -58,9 +58,9 @@ class Controller{
     public function saveUser() {
         $uname = filter_input(INPUT_POST, 'uname');
         $pass = filter_input(INPUT_POST, 'pswrd');
+        $role = $_POST['role'];
         $pswrdHash = strtoupper(hash("sha256", $pass));
         $pswrd = $pswrdHash;
-        $role = $_POST['role'];
         $this->model->createUser($uname, $pswrd, $role);
         $this->showUserAction();
     }
