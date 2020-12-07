@@ -18,11 +18,11 @@ require_once "templates/nav.php";
         <div class="content">
             <img src="/healthone_mvc/assets/images/profilePicture/profilePlaceholder.png" alt="Profiel Foto">
             <?php
-            
+                echo "<h1>Welkom: " . $_SESSION['username'] . "</h1>";
             ?>
             <div class="container">
             <form action="home.php" method="post">    
-            <button class="add" type="submit" name="addUser">Toevoegen</button>
+            <button class="add" type="submit" name="showAddUser">Toevoegen</button>
         </form>
                 <div class="table">
                     <?php
@@ -37,10 +37,10 @@ require_once "templates/nav.php";
                                 echo "<tr>";    
                                     echo "<td>" . $user->getUname() . " </td>";
                                     echo "<td>" . $user->getRole() . " </td>";
-                                    echo "<td>" . "<form action='home.php' method='post'>
-                                    <button class='ud' type='submit' name='editUser' ><i class='fa fa-pen'></i></button>
-                                    <button class='ud' type='submit' name='deletetUser' ><i class='fa fa-trash'></i></button>
-                                </form>" . " </td>";
+                                    echo "<td><form action='home.php' method='post'>";
+                                    echo "<button class='ud' value='" . $user->setId() ."' type='submit' name='editUser' ><i class='fa fa-pen'></i></button>";
+                                    echo "<button class='ud' value='" . $user->setId() . "' type='submit' name='deleteUser' ><i class='fa fa-trash'></i></button>";
+                                echo "</form> </td>";
                                 echo "</tr>";
                             }
                             echo "</table>";     
