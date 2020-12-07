@@ -254,7 +254,7 @@ body {
             margin: 15% auto;
             padding: 20px;
             border: 1px solid #888;
-            width: 700px;
+            width: auto;
 
 
             table {
@@ -265,14 +265,18 @@ body {
                 th,
                 td {
                     text-align: center;
-                    padding: 8px;
-                    // border: solid 1px $bordercolor;
-
+                    
                     input[type=submit] {
                         height: 50px;
                         width: 100px;
                         border-radius: 25px;
                         border: solid 1px $bordercolor;
+                        box-shadow: 2px 2px 5px 1px $bordercolor;
+
+                            &:hover {
+
+                                box-shadow: inset 2px 2px 5px 1px $bordercolor;
+                            }
                     }
                 }
             }

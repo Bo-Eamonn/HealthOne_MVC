@@ -31,10 +31,6 @@ require_once "templates/nav.php";
                         <th><label for="medHis">Medicijn Geschiedenis</label></th>
                         <th><label for="notes">Notities</label></th>
                         <th><label for="adres">Adres</label></th>
-                        <th><label for="woonplaats">Woonplaats</label></th>
-                        <th><label for="zknummer">Zorg Nummer</label></th>
-                        <th><label for="geboortedatum">Geboorte datum</label></th>
-                        <th><label for="soortVerzekering">Verzekering</label></th>
                     </tr>
                     <tr>
                         <td><input type="text" required autocomplete="off" name="naam" value='' /></td>
@@ -42,18 +38,27 @@ require_once "templates/nav.php";
                         <td><input type="text" autocomplete="off" name="medHis" value='' /></td>
                         <td><input type="text" autocomplete="off" name="notes" value='' /></td>
                         <td><input type="text" required autocomplete="off" name="adres" value='' /></td>
+                    </tr>
+                    <tr>
+                        <th><label for="woonplaats">Woonplaats</label></th>
+                        <th><label for="zknummer">Zorg Nummer</label></th>
+                        <th><label for="geboortedatum">Geboorte datum</label></th>
+                        <th><label for="soortVerzekering">Verzekering</label></th>
+                    </tr>
+                    
+                    <tr>
                         <td><input type="text" required autocomplete="off" name="woonplaats" value='' /></td>
                         <td><input type="text" required autocomplete="off" name="zknummer" value='' /></td>
                         <td><input type="date" required autocomplete="off" name="geboortedatum" value='' /></td>
                         <td>
                             <select required name="soortVerzekering">
                                 <option value="" disabled selected>Maak een keuze</option>
-                                <option value="Basis Budget" >Basis Budget</option>
-                                <option value="Basis Zeker" >Basis Zeker</option>
-                                <option value="Basis Exclusief" >Basis Exclusief</option>
+                                <option value="Basis Budget">Basis Budget</option>
+                                <option value="Basis Zeker">Basis Zeker</option>
+                                <option value="Basis Exclusief">Basis Exclusief</option>
                             </select>
                         </td>
-                        
+
                     </tr>
                     <tr>
                         <td></td>

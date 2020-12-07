@@ -254,7 +254,7 @@ body .modal > .userModal-container {
   margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 700px;
+  width: auto;
 }
 
 body .modal > .medModal-container table,
@@ -271,7 +271,6 @@ body .modal > .patientModal-container table td,
 body .modal > .userModal-container table th,
 body .modal > .userModal-container table td {
   text-align: center;
-  padding: 8px;
 }
 
 body .modal > .medModal-container table th input[type=submit],
@@ -284,6 +283,18 @@ body .modal > .userModal-container table td input[type=submit] {
   width: 100px;
   border-radius: 25px;
   border: solid 1px #666666;
+  -webkit-box-shadow: 2px 2px 5px 1px #666666;
+          box-shadow: 2px 2px 5px 1px #666666;
+}
+
+body .modal > .medModal-container table th input[type=submit]:hover,
+body .modal > .medModal-container table td input[type=submit]:hover,
+body .modal > .patientModal-container table th input[type=submit]:hover,
+body .modal > .patientModal-container table td input[type=submit]:hover,
+body .modal > .userModal-container table th input[type=submit]:hover,
+body .modal > .userModal-container table td input[type=submit]:hover {
+  -webkit-box-shadow: inset 2px 2px 5px 1px #666666;
+          box-shadow: inset 2px 2px 5px 1px #666666;
 }
 
 body .modal > .medModal-container .close,
