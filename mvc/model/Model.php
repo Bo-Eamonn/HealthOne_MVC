@@ -163,8 +163,8 @@ public function getHome(){
         $result = $select->execute();
         if ($result) {
             $select->setFetchMode(PDO::FETCH_CLASS,User::class);
-            $med = $select->fetch();
-            return $med;
+            $user = $select->fetch();
+            return $user;
         }
     return null;
     }    
@@ -172,8 +172,7 @@ public function getHome(){
     public function createPatient($naam, $huidigeMed, $medHis, $notes, $adres, $woonplaats, $zknummer, $geboortedatum, $soortVerzekering){
         $this->connectDb();
         if ($naam !='' && $huidigeMed !='' && $medHis !='' && $notes !='' && $adres !='' && $woonplaats !='' && $zknummer !='' && $geboortedatum !='' && $soortVerzekering !='') {
-            $query = $this->db->prepare("INSERT INTO `patients` (`id`, `naam`, `huidigeMed`, `medHis`, `notes`, `adres`, `woonplaats`, `zknummer`, `geboortedatum`, `soortVerzekering`) VALUES 
-                                                                  ('', :naam, :huidigeMed, :medHis, :notes, :adres, :woonplaats, :zknummer, :geboortedatum, :soortVerzekering)");
+            $query = $this->db->prepare("INSERT INTO `patients` (`id`, `naam`, `huidigeMed`, `medHis`, `notes`, `adres`, `woonplaats`, `zknummer`, `geboortedatum`, `soortVerzekering`) VALUES ('', :naam, :huidigeMed, :medHis, :notes, :adres, :woonplaats, :zknummer, :geboortedatum, :soortVerzekering)");
             $query->bindParam(":naam", $naam);  
             $query->bindParam(":huidigeMed", $huidigeMed);  
             $query->bindParam(":medHis", $medHis);  
@@ -193,7 +192,7 @@ public function getHome(){
         $this->connectDb();
         $select = $this->db->query('SELECT * FROM `patients` ');
         if ($select) {
-            $result=$select->fetchALL(PDO::FETCH_CLASS,User::class);
+            $result=$select->fetchALL(PDO::FETCH_CLASS,Patient::class);
             return $result;
         }
         return null;
@@ -232,9 +231,9 @@ public function getHome(){
         $select->bindParam(":id", $id);
         $result = $select->execute();
         if ($result) {
-            $select->setFetchMode(PDO::FETCH_CLASS,User::class);
-            $med = $select->fetch();
-            return $med;
+            $select->setFetchMode(PDO::FETCH_CLASS,Patient::class);
+            $patient = $select->fetch();
+            return $patient;
         }
     return null;
     }    
