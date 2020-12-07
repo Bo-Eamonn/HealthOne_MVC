@@ -31,9 +31,9 @@ require_once "templates/nav.php";
                         <th><label for="insured">Verzekerd</label></th>
                     </tr>
                     <tr>
-                        <td><input type="text" autocomplete="off" name="name" value='' /></td>
+                        <td><input type="text" required autocomplete="off" name="name" value='' /></td>
                         <td>
-                            <select name="cat">
+                            <select required name="cat">
                                 <option value="" disabled selected>Maak een keuze</option>
                                 <option value="ADHD-middelen">ADHD-middelen</option>
                                 <option value="Alzheimer-middelen">Alzheimer-middelen</option>
@@ -55,7 +55,7 @@ require_once "templates/nav.php";
                         </td>
                         <td>
                             <label for="insured">Ja</label>
-                            <input type="radio" name="insured" value="yes">
+                            <input type="radio" checked name="insured" value="yes">
                             <label for="insured">Nee</label>
                             <input type="radio" name="insured" value="no">
                         </td>

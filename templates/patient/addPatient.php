@@ -37,16 +37,16 @@ require_once "templates/nav.php";
                         <th><label for="soortVerzekering">Verzekering</label></th>
                     </tr>
                     <tr>
-                        <td><input type="text" autocomplete="off" name="naam" value='' /></td>
+                        <td><input type="text" required autocomplete="off" name="naam" value='' /></td>
                         <td><input type="text" autocomplete="off" name="huidigeMed" value='' /></td>
                         <td><input type="text" autocomplete="off" name="medHis" value='' /></td>
                         <td><input type="text" autocomplete="off" name="notes" value='' /></td>
-                        <td><input type="text" autocomplete="off" name="adres" value='' /></td>
-                        <td><input type="text" autocomplete="off" name="woonplaats" value='' /></td>
-                        <td><input type="text" autocomplete="off" name="zknummer" value='' /></td>
-                        <td><input type="date" autocomplete="off" name="geboortedatum" value='' /></td>
+                        <td><input type="text" required autocomplete="off" name="adres" value='' /></td>
+                        <td><input type="text" required autocomplete="off" name="woonplaats" value='' /></td>
+                        <td><input type="text" required autocomplete="off" name="zknummer" value='' /></td>
+                        <td><input type="date" required autocomplete="off" name="geboortedatum" value='' /></td>
                         <td>
-                            <select name="soortVerzekering">
+                            <select required name="soortVerzekering">
                                 <option value="" disabled selected>Maak een keuze</option>
                                 <option value="Basis Budget" >Basis Budget</option>
                                 <option value="Basis Zeker" >Basis Zeker</option>
