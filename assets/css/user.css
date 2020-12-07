@@ -47,9 +47,9 @@ header > div > img {
 }
 
 header > div > div input#logout {
-  height: 80px;
-  width: 198px;
-  margin: 50px 40px 0 0;
+  height: 40px;
+  width: 99px;
+  margin: 25px 40px 0 0;
   background-color: #33CCFF;
   border-radius: 100px;
 }
@@ -210,7 +210,9 @@ footer a {
           backdrop-filter: blur(5px);
 }
 
-.modal > .medModal-container {
+.modal > .medModal-container,
+.modal > .patientModal-container,
+.modal > .userModal-container {
   background-color: #fefefe;
   margin: 15% auto;
   padding: 20px;
@@ -218,26 +220,38 @@ footer a {
   width: 700px;
 }
 
-.modal > .medModal-container table {
+.modal > .medModal-container table,
+.modal > .patientModal-container table,
+.modal > .userModal-container table {
   border-collapse: collapse;
   width: 100%;
 }
 
 .modal > .medModal-container table th,
-.modal > .medModal-container table td {
+.modal > .medModal-container table td,
+.modal > .patientModal-container table th,
+.modal > .patientModal-container table td,
+.modal > .userModal-container table th,
+.modal > .userModal-container table td {
   text-align: center;
   padding: 8px;
 }
 
 .modal > .medModal-container table th input[type=submit],
-.modal > .medModal-container table td input[type=submit] {
+.modal > .medModal-container table td input[type=submit],
+.modal > .patientModal-container table th input[type=submit],
+.modal > .patientModal-container table td input[type=submit],
+.modal > .userModal-container table th input[type=submit],
+.modal > .userModal-container table td input[type=submit] {
   height: 50px;
   width: 100px;
   border-radius: 25px;
   border: solid 1px #666666;
 }
 
-.modal > .medModal-container .close {
+.modal > .medModal-container .close,
+.modal > .patientModal-container .close,
+.modal > .userModal-container .close {
   color: #aaa;
   float: right;
   font-size: 28px;
@@ -246,7 +260,11 @@ footer a {
   background-color: inherit;
 }
 
-.modal > .medModal-container .close:focus, .modal > .medModal-container .close:hover {
+.modal > .medModal-container .close:focus, .modal > .medModal-container .close:hover,
+.modal > .patientModal-container .close:focus,
+.modal > .patientModal-container .close:hover,
+.modal > .userModal-container .close:focus,
+.modal > .userModal-container .close:hover {
   color: black;
   text-decoration: none;
   cursor: pointer;
