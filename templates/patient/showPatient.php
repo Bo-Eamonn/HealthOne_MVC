@@ -16,7 +16,7 @@ require_once "templates/nav.php";
 ?>
     <main>
         <div class="content">
-            <img src="/healthone/assets/images/profilePicture/profilePlaceholder.png" alt="Profiel Foto">
+            <img src="/healthone_mvc/assets/images/profilePicture/profilePlaceholder.png" alt="Profiel Foto">
             <?php
             ?>
             <div class="container">

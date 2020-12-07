@@ -2,7 +2,7 @@
 <body>
     <header>
         <div>
-            <img src="/healthone/assets/images/logo.png" alt="Logo" id="logo">
+            <img src="/healthone_mvc/assets/images/logo.png" alt="Logo" id="logo">
             <div class="search-container">
                 <form class="search-box">
                     <input type="text" placeholder="Zoeken" title="Zoek naar patienten" name="search" autocomplete="off">
