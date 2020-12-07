@@ -51,6 +51,27 @@ class Controller{
         $result = $this->model->getUsers();
         $this->view->showUsers($result);
     }
+    public function addUserAction(){
+        $result = "";
+        $this->view->createUser($result);
+    }
+    public function saveUser() {
+        $uname = filter_input(INPUT_POST, 'uname');
+        $pswrd = filter_input(INPUT_POST, 'pswrd');
+        $role = $_POST['role'];        
+        $this->model->createUser($uname, $pswrd, $role);
+        $this->showUserAction();
+    }
+    public function deleteUser() {
+        $id = $_POST["deleteUser"];
+        $test = $this->model->deleteUser($id);
+        $this->showUserAction();
+    }
+    public function editUser() {
+        $id = $_POST["editUser"];
+        $med = $this->model->getUsers($id);
+        $this->view->updateUser($id);
+    }
 //CRUD PATIENT
     public function showPatientAction(){
         $result = $this->model->getPatients();
@@ -76,7 +97,7 @@ class Controller{
     public function deletePatient() {
         $id = $_POST["deletePatient"];
         $test = $this->model->deletePatient($id);
-        $this->showPatientAction($test);
+        $this->showPatientAction();
     }
     public function editPatient() {
         $id = $_POST["editPatient"];

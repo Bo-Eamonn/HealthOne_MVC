@@ -21,6 +21,14 @@ $controller = new Controller();
             $controller->editMed();
         }elseif (isset($_POST['user']) || isset($_POST['cancelUser'])) {
             $controller->showUserAction();
+        }elseif (isset($_POST['showAddUser'])) {
+            $controller->addUserAction();
+        }elseif (isset($_POST['toevoegenUser'])) {
+            $controller->saveUser();
+        } elseif(isset($_POST['deleteUser'])) {
+            $controller->deleteUser();
+        } elseif(isset($_POST['editUser'])) {
+            $controller->editUser();
         } elseif (isset($_POST['patient']) || isset($_POST['cancelPatient'])) {
             $controller->showPatientAction();
         }elseif (isset($_POST['showAddPatient'])) {
