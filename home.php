@@ -19,11 +19,19 @@ $controller = new Controller();
             $controller->deleteMed();
         } elseif(isset($_POST['editMed'])) {
             $controller->editMed();
-        }elseif (isset($_POST['user'])) {
+        }elseif (isset($_POST['user']) || isset($_POST['cancelUser'])) {
             $controller->showUserAction();
-        } elseif (isset($_POST['patient'])) {
+        } elseif (isset($_POST['patient']) || isset($_POST['cancelPatient'])) {
             $controller->showPatientAction();
-        } else {
+        }elseif (isset($_POST['showAddPatient'])) {
+            $controller->addPatientAction();
+        }elseif (isset($_POST['toevoegenPatient'])) {
+            $controller->savePatient();
+        } elseif(isset($_POST['deletePatient'])) {
+            $controller->deletePatient();
+        } elseif(isset($_POST['editPatient'])) {
+            $controller->editPatient();}
+        else {
             $controller->showHomeAction();
         }
     } else {

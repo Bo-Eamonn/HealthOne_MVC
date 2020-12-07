@@ -33,6 +33,15 @@ class View{
     public function showPatients($result){
         require ('templates/patient/showPatient.php');
     }
+    public function addPatient($result){
+        require ('templates/patient/addPatient.php');
+    }
+    public function createPatient($result){
+        require ('templates/patient/addPatient.php');
+    }
+    public function updatePatient($result){
+        require ('templates/patient/updatePatients.php');
+    }
     public function showHome(){ 
         require ('templates/login/showHome.php');
     }

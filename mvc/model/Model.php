@@ -172,7 +172,8 @@ public function getHome(){
     public function createPatient($naam, $huidigeMed, $medHis, $notes, $adres, $woonplaats, $zknummer, $geboortedatum, $soortVerzekering){
         $this->connectDb();
         if ($naam !='' && $huidigeMed !='' && $medHis !='' && $notes !='' && $adres !='' && $woonplaats !='' && $zknummer !='' && $geboortedatum !='' && $soortVerzekering !='') {
-            $query = $this->db->prepare("INSERT INTO `patients` (`id`, `naam`, `huidigeMed`, `medHis`, `notes`, `adres`, `woonplaats`, `zknummer`, `geboortedatum`, `soortVerzekering`) VALUES ('', :naam, :huidigeMed, :medHis, :notes, :adres. :woonplaats, :zknummer, :geboortedatum)");
+            $query = $this->db->prepare("INSERT INTO `patients` (`id`, `naam`, `huidigeMed`, `medHis`, `notes`, `adres`, `woonplaats`, `zknummer`, `geboortedatum`, `soortVerzekering`) VALUES 
+                                                                  ('', :naam, :huidigeMed, :medHis, :notes, :adres, :woonplaats, :zknummer, :geboortedatum, :soortVerzekering)");
             $query->bindParam(":naam", $naam);  
             $query->bindParam(":huidigeMed", $huidigeMed);  
             $query->bindParam(":medHis", $medHis);  
@@ -201,7 +202,7 @@ public function getHome(){
     public function updatePatient($id, $naam, $huidigeMed, $medHis, $notes, $adres, $woonplaats, $zknummer, $geboortedatum, $soortVerzekering){
         $this->connectDb();
         if ($naam !='' && $huidigeMed !='' && $medHis !='' && $notes !='' && $adres !='' && $woonplaats !='' && $zknummer !='' && $geboortedatum !='' && $soortVerzekering !='') {
-            $query = $this->db->prepare("UPDATE `patients` SET `naam`=:n`huidigeMed`=:huidigeMed,`medHis`=:medHis,`notes`=:notes,`adres`=:adres,`woonplaats`=:woonplaats,`zknummer`=:zknummer,`geboortedatum`=:geboortedatum,`soortVerzekering`=:soortVerzekering WHERE `patients`.`id`=:id");
+            $query = $this->db->prepare("UPDATE `patients` SET `naam`=:naam,`huidigeMed`=:huidigeMed,`medHis`=:medHis,`notes`=:notes,`adres`=:adres,`woonplaats`=:woonplaats,`zknummer`=:zknummer,`geboortedatum`=:geboortedatum,`soortVerzekering`=:soortVerzekering WHERE `patients`.`id`=:id");
             $query->bindParam(":id", $id);  
             $query->bindParam(":naam", $naam);  
             $query->bindParam(":huidigeMed", $huidigeMed);  
