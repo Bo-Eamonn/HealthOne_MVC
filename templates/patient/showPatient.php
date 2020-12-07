@@ -16,12 +16,12 @@ require_once "templates/nav.php";
 ?>
     <main>
         <div class="content">
-            <img src="/healthone/frontend/static/images/profilePicture/profilePlaceholder.png" alt="Profiel Foto">
+            <img src="/healthone/assets/images/profilePicture/profilePlaceholder.png" alt="Profiel Foto">
             <?php
             ?>
             <div class="container">
             <form action="home.php" method="post">    
-            <button class="add" type="submit" name="addPatient">Toevoegen</button>
+            <button class="add" type="submit" name="showAddPatient">Toevoegen</button>
         </form>
                 <div class="table">
                     <?php
@@ -38,8 +38,8 @@ require_once "templates/nav.php";
                                     echo "<td>" . $patient->geboortedatum . " </td>";
                                     echo "<td>" . $patient->zknummer . " </td>";
                                     echo "<td>" . "<form action='home.php' method='post'>
-                                    <button class='ud' type='submit' name='editPatient' ><i class='fa fa-pen'></i></button>
-                                    <button class='ud' type='submit' name='deletetPatient' ><i class='fa fa-trash'></i></button>
+                                    <button class='ud' type='submit' value='$patient->id' name='editPatient' ><i class='fa fa-pen'></i></button>
+                                    <button class='ud' type='submit' value='$patient->id' name='deletePatient' ><i class='fa fa-trash'></i></button>
                                 </form>" . " </td>";
                                 echo "</tr>";
                             }

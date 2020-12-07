@@ -26,7 +26,7 @@
             <button name="inloggen" type="submit">Inloggen</button>
         </form>
     </div>
-    <script src="/HealthOne/frontend/static/js/pswrdToggle.js"></script>
+    <script src="/HealthOne/assets/js/pswrdToggle.js"></script>
 </body>
 
 </html>
