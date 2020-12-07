@@ -9,7 +9,9 @@ $controller = new Controller();
     if ($_SESSION['login'] == true) {
         if (isset($_POST['logout'])){
             $controller->logoutAction();
-        }elseif (isset($_POST['med']) || isset($_POST['cancelMed'])) {
+        }
+//CRUD MED        
+        elseif (isset($_POST['med']) || isset($_POST['cancelMed'])) {
             $controller->showMedAction();
         }elseif (isset($_POST['showAddMed'])) {
             $controller->addMedAction();
@@ -19,7 +21,9 @@ $controller = new Controller();
             $controller->deleteMed();
         } elseif(isset($_POST['editMed'])) {
             $controller->editMed();
-        }elseif (isset($_POST['user']) || isset($_POST['cancelUser'])) {
+        }
+//CRUD USER
+        elseif (isset($_POST['user']) || isset($_POST['cancelUser'])) {
             $controller->showUserAction();
         }elseif (isset($_POST['showAddUser'])) {
             $controller->addUserAction();
@@ -29,7 +33,9 @@ $controller = new Controller();
             $controller->deleteUser();
         } elseif(isset($_POST['editUser'])) {
             $controller->editUser();
-        } elseif (isset($_POST['patient']) || isset($_POST['cancelPatient'])) {
+        } 
+//CRUD PATIENT
+        elseif (isset($_POST['patient']) || isset($_POST['cancelPatient'])) {
             $controller->showPatientAction();
         }elseif (isset($_POST['showAddPatient'])) {
             $controller->addPatientAction();
