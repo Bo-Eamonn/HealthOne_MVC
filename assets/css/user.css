@@ -28,7 +28,7 @@ textarea {
 header {
   background: #e9e9e9;
   width: 100%;
-  height: 180px;
+  height: 100px;
 }
 
 header > div {
@@ -41,9 +41,9 @@ header > div {
 }
 
 header > div > img {
-  width: 143px;
-  height: 143px;
-  margin: 18px 0 19px 20px;
+  width: 63px;
+  height: 63px;
+  margin: 15px 0 19px 20px;
 }
 
 header > div > div input#logout {
