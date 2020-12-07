@@ -37,7 +37,7 @@ class Controller{
     }
     public function deleteMed() {
         $id = $_POST["deleteMed"];
-        $test = $this->model->deleteMed($id);
+        $delMed = $this->model->deleteMed($id);
         $this->showMedAction();
     }
     public function editMed() {
@@ -57,20 +57,22 @@ class Controller{
     }
     public function saveUser() {
         $uname = filter_input(INPUT_POST, 'uname');
-        $pswrd = filter_input(INPUT_POST, 'pswrd');
-        $role = $_POST['role'];        
+        $pass = filter_input(INPUT_POST, 'pswrd');
+        $pswrdHash = strtoupper(hash("sha256", $pass));
+        $pswrd = $pswrdHash;
+        $role = $_POST['role'];
         $this->model->createUser($uname, $pswrd, $role);
         $this->showUserAction();
     }
     public function deleteUser() {
         $id = $_POST["deleteUser"];
-        $test = $this->model->deleteUser($id);
+        $delUser = $this->model->deleteUser($id);
         $this->showUserAction();
     }
     public function editUser() {
         $id = $_POST["editUser"];
-        $med = $this->model->getUsers($id);
-        $this->view->updateUser($id);
+        $user = $this->model->getUsers($id);
+        $this->view->updateUser($user);
     }
 //CRUD PATIENT
     public function showPatientAction(){
@@ -96,13 +98,13 @@ class Controller{
     }
     public function deletePatient() {
         $id = $_POST["deletePatient"];
-        $test = $this->model->deletePatient($id);
+        $delPatient = $this->model->deletePatient($id);
         $this->showPatientAction();
     }
     public function editPatient() {
         $id = $_POST["editPatient"];
-        $med = $this->model->getPatients($id);
-        $this->view->updatePatient($med);
+        $patient = $this->model->getPatients($id);
+        $this->view->updatePatient($patient);
 
     }
     public function loginAction()
