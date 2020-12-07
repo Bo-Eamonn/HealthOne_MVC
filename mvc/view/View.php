@@ -32,11 +32,11 @@ public function createPatient($result){
 }
 
 public function addUser($result){
-    require ('templates/patient/addUser.php');
+    require ('templates/user/addUser.php');
 }
 
 public function createUser($result){
-    require ('templates/patient/addUser.php');
+    require ('templates/user/addUser.php');
 }
 
 // READ
