@@ -45,8 +45,8 @@ $controller = new Controller();
         } elseif(isset($_POST['deletePatient'])) {
             $controller->deletePatient();
         } elseif(isset($_POST['editPatient'])) {
-            $controller->editPatient();}
-        else {
+            $controller->editPatient();
+        }else {
             $controller->showHomeAction();
         }
     }
@@ -54,11 +54,12 @@ $controller = new Controller();
     elseif (isset($_SESSION['role']) && $_SESSION['role']=="arts") {
         if (isset($_POST['logout'])){
             $controller->logoutAction();
-        }
-        elseif (isset($_POST['med'])) {
+        }elseif (isset($_POST['med'])) {
             $controller->showMedAction();
         }elseif (isset($_POST['patient'])) {
             $controller->showPatientAction();
+        }elseif(isset($_POST['editPatient'])) {
+            $controller->editPatient();
         }else {
             $controller->showHomeAction();
         }
