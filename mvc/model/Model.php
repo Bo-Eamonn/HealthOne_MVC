@@ -26,7 +26,6 @@ class Model
             $user = $query->fetch();
             if ($user) {
                 $gehashtpassword = strtoupper(hash("sha256", $pswrd));
-                var_dump($gehashtpassword);
                 if ($user->getPswrd() == $gehashtpassword) {
                     $_SESSION['username'] = $user->getUname();
                     $_SESSION['role'] = $user->getRole();
@@ -38,7 +37,7 @@ class Model
     public function logout(){    
     session_unset();
     session_destroy();
-    // header("location: /healthone_mvc/");
+    header("location: /healthone_mvc/");
     exit;
     }
 
