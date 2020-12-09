@@ -18,18 +18,17 @@ class Model
 //Login
     public function login($uname, $pswrd){
         $this->connectDb();
-        $query = $this->db->prepare("SELECT * FROM users WHERE uname = :user AND pswrd = :pswrd");
-        $query->bindParam("user", $uname);
-        $query->bindParam("pswrd", $pswrd);
+        $query = $this->db->prepare('SELECT * FROM `users` WHERE `users`.`uname` =:uname');
+        $query->bindParam(":uname", $uname);
         $result = $query->execute();
         if($result) {
-            $query->setFetchMode(\PDO::FETCH_CLASS, \model\User::class);
+            $query->setFetchMode(\PDO::FETCH_CLASS, User::class);
             $user = $query->fetch();
             if ($user) {
                 $gehashtpassword = strtoupper(hash("sha256", $pswrd));
-                // var_dump($gehashtpassword);
-                if ($user->getPassword() == $gehashtpassword) {
-                    $_SESSION['user'] = $user->getUsername();
+                var_dump($gehashtpassword);
+                if ($user->getPswrd() == $gehashtpassword) {
+                    $_SESSION['username'] = $user->getUname();
                     $_SESSION['role'] = $user->getRole();
                 }
             }
@@ -39,14 +38,14 @@ class Model
     public function logout(){    
     session_unset();
     session_destroy();
-    header("location: /healthone_mvc/");
+    // header("location: /healthone_mvc/");
     exit;
     }
 
 //Read Home
 
 public function getHome(){
-    if ($_SESSION['login'] == true) {
+    if(1+1==2) {
     $text = "Last Login ";
     $date = date("F j, Y, g:i a");
     $result = $text.$date;

@@ -21,7 +21,7 @@ require_once "templates/nav.php";
                 echo "<h1>Welkom: " . $_SESSION['username'] . "</h1>";
             ?>
             <div class="container">
-            <form action="home.php" method="post">    
+            <form action="" method="post">    
             <button class="add" type="submit" name="showAddPatient">Toevoegen</button>
         </form>
                 <div class="table">
@@ -38,7 +38,7 @@ require_once "templates/nav.php";
                                     echo "<td>" . $patient->naam . " </td>";
                                     echo "<td>" . $patient->geboortedatum . " </td>";
                                     echo "<td>" . $patient->zknummer . " </td>";
-                                    echo "<td>" . "<form action='home.php' method='post'>
+                                    echo "<td>" . "<form action='' method='post'>
                                     <button class='ud' type='submit' value='$patient->id' name='editPatient' ><i class='fa fa-pen'></i></button>
                                     <button class='ud' type='submit' value='$patient->id' name='deletePatient' ><i class='fa fa-trash'></i></button>
                                 </form>" . " </td>";

@@ -113,17 +113,29 @@ class Controller{
             $uname = filter_input(INPUT_POST, 'uname');
             $pswrd = filter_input(INPUT_POST, 'pswrd');
             $this->model->login($uname, $pswrd);
-        } else {
-            $this->view->showLogin();
+        
+            if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
+                $this->model->getHome();
+                $this->view->showHome();
+                echo "wrong";
+            } else {
+                echo "help";
+                $this->view->showLogin();
+            }
+        }else {
+            echo "help2";
+                $this->view->showLogin();
         }
     }
+    
+    public function showHomeAction(){
+        $this->model->getHome();
+        $this->view->showHome();
+    }
+
     public function logoutAction(){
         $this->model->logout();
         $this->view->showLogin();
         
-    }
-    public function showHomeAction(){
-        $this->model->getHome();
-        $this->view->showHome();
     }
 }

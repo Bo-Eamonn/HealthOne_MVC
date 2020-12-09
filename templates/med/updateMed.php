@@ -4,7 +4,7 @@
             <span onclick="document.getElementById('medAddModal').style.display='none'" class="close" title="Sluiten">
                 <i class="fa fa-times-circle"></i>
             </span>
-            <form action="home.php" method="POST">
+            <form action="" method="POST">
                 <table>
                     <input type="hidden" name="id" value='' />
                     <tr>

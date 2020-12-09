@@ -17,12 +17,12 @@ require_once "templates/nav.php";
 <div id="medAddModal" class="modal">
     <div class="medModal-container">
         <div>
-            <form action="home.php" method="post">
+            <form action="" method="post">
                 <button type="submit" name="cancelMed" class="close" title="Sluiten">
                     <i class="fa fa-times-circle"></i>
                 </button>
             </form>
-            <form action="home.php" method="POST">
+            <form action="" method="POST">
                 <table>
                     <input type="hidden" name="id" value='' />
                     <tr>

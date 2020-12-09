@@ -11,7 +11,7 @@
                 <div class="result"></div>
             </div>
             <div>
-                <form action="home.php" method="post">
+                <form action="" method="post">
                     <input type="hidden" name="logout" value="0">
                     <input type="submit" id="logout" value="Uitloggen">
                 </form>

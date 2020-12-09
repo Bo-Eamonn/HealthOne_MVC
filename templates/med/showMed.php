@@ -22,7 +22,7 @@ require_once "templates/nav.php";
         ?>
         <div class="container">
 
-        <form action="home.php" method="post">    
+        <form action="" method="post">    
             <button class="add" type="submit" name="showAddMed">Toevoegen</button>
         </form>
             <div class="table">
@@ -38,7 +38,7 @@ require_once "templates/nav.php";
                                 echo "<tr>";    
                                     echo "<td id='" . $med->insured."'>" . $med->name . " </td>";
                                     echo "<td id='" . $med->insured."'>" . $med->cat . " </td>";
-                                    echo "<td id='" . $med->insured."'>" . "<form action='home.php' method='post'>
+                                    echo "<td id='" . $med->insured."'>" . "<form action='' method='post'>
                                     <button class='ud' type='submit' value='$med->id' name='editMed' ><i class='fa fa-pen'></i></button>
                                     <button class='ud' type='submit' value='$med->id' name='deleteMed' ><i class='fa fa-trash'></i></button>
                                 </form>" . " </td>";
