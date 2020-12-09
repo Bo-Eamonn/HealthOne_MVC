@@ -1,5 +1,5 @@
 
-<body>
+<body class="<?php echo $_SESSION['role']?>">
     <header>
         <div>
             <img src="/healthone_mvc/assets/images/logo.png" alt="Logo" id="logo">
