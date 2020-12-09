@@ -27,7 +27,15 @@ textarea {
     text-rendering: optimizeLegibility;
     font-family: 'New Century Schoolbook', 'TeX Gyre Schola', serif;
 }
-
+body.apoth{
+    input.apoth,button.apoth{
+        display: none;
+    }
+}body.arts{
+    input.arts,button.arts{
+        display: none;
+    }
+}
 body {
     background-image: url("../../assets/images/bg.png");
 

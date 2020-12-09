@@ -25,6 +25,14 @@ textarea {
   font-family: 'New Century Schoolbook', 'TeX Gyre Schola', serif;
 }
 
+body.apoth input.apoth, body.apoth button.apoth {
+  display: none;
+}
+
+body.arts input.arts, body.arts button.arts {
+  display: none;
+}
+
 body {
   background-image: url("../../assets/images/bg.png");
 }
