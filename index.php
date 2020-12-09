@@ -49,6 +49,29 @@ $controller = new Controller();
         else {
             $controller->showHomeAction();
         }
+    }
+//LOGIN ARTS
+    elseif (isset($_SESSION['role']) && $_SESSION['role']=="arts") {
+        if (isset($_POST['logout'])){
+            $controller->logoutAction();
+        }
+        elseif (isset($_POST['med'])) {
+            $controller->showMedAction();
+        }elseif (isset($_POST['patient'])) {
+            $controller->showPatientAction();
+        }else {
+            $controller->showHomeAction();
+        }
+    }
+//LOGIN APOTHEEK
+    elseif (isset($_SESSION['role']) && $_SESSION['role']=="apoth") {
+        if (isset($_POST['logout'])){
+            $controller->logoutAction();
+        }elseif (isset($_POST['patient'])) {
+            $controller->showPatientAction();
+        }else {
+            $controller->showHomeAction();
+        }
     } else {
         $controller->loginAction();
     }
