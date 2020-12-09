@@ -117,13 +117,10 @@ class Controller{
             if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
                 $this->model->getHome();
                 $this->view->showHome();
-                echo "wrong";
             } else {
-                echo "help";
                 $this->view->showLogin();
             }
         }else {
-            echo "help2";
                 $this->view->showLogin();
         }
     }
