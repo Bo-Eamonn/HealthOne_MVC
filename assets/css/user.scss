@@ -27,15 +27,23 @@ textarea {
     text-rendering: optimizeLegibility;
     font-family: 'New Century Schoolbook', 'TeX Gyre Schola', serif;
 }
-body.apoth{
-    input.apoth,button.apoth{
-        display: none;
-    }
-}body.arts{
-    input.arts,button.arts{
+
+body.apoth {
+
+    input.apoth,
+    button.apoth {
         display: none;
     }
 }
+
+body.arts {
+
+    input.arts,
+    button.arts {
+        display: none;
+    }
+}
+
 body {
     background-image: url("../../assets/images/bg.png");
 
@@ -54,7 +62,7 @@ body {
                 width: 63px;
                 height: 63px;
                 margin: 15px 0 19px 20px;
-               
+
 
             }
 
@@ -78,13 +86,13 @@ body {
     nav {
         float: left;
         background-color: white;
-        box-shadow:0 0 3px $bordercolor;
+        box-shadow: 0 0 3px $bordercolor;
 
         >section {
             margin: 20px 20px 20px 20px;
             padding: 34px 36px 24px 36px;
             box-shadow: inset 0 0 5px $bordercolor;
-            
+
 
             >form {
 
@@ -273,7 +281,7 @@ body {
                 th,
                 td {
                     text-align: center;
-                    
+
                     input[type=submit] {
                         height: 50px;
                         width: 100px;
@@ -281,10 +289,10 @@ body {
                         border: solid 1px $bordercolor;
                         box-shadow: 2px 2px 5px 1px $bordercolor;
 
-                            &:hover {
+                        &:hover {
 
-                                box-shadow: inset 2px 2px 5px 1px $bordercolor;
-                            }
+                            box-shadow: inset 2px 2px 5px 1px $bordercolor;
+                        }
                     }
                 }
             }
