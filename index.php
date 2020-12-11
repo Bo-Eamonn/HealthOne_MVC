@@ -20,8 +20,10 @@ $controller = new Controller();
             $controller->saveMed();
         } elseif(isset($_POST['deleteMed'])) {
             $controller->deleteMed();
-        } elseif(isset($_POST['editMed'])) {
-            $controller->editMed();
+        } elseif(isset($_POST['showUpdateMed'])) {
+            $controller->showUpdateMed();
+        } elseif (isset($_POST['updateMed'])) {
+            $controller->updateMed();
         }
 //CRUD USER
         elseif (isset($_POST['user']) || isset($_POST['cancelUser'])) {
@@ -46,7 +48,9 @@ $controller = new Controller();
             $controller->deletePatient();
         } elseif(isset($_POST['editPatient'])) {
             $controller->editPatient();
-        }else {
+        }
+//DEFAULT PAGE
+        else {
             $controller->showHomeAction();
         }
     }
@@ -60,7 +64,9 @@ $controller = new Controller();
             $controller->showPatientAction();
         }elseif(isset($_POST['editPatient'])) {
             $controller->editPatient();
-        }else {
+        }
+//DEFAULT PAGE        
+        else {
             $controller->showHomeAction();
         }
     }
@@ -70,7 +76,9 @@ $controller = new Controller();
             $controller->logoutAction();
         }elseif (isset($_POST['patient'])) {
             $controller->showPatientAction();
-        }else {
+        }
+//DEFAULT PAGE        
+        else {
             $controller->showHomeAction();
         }
     } else {

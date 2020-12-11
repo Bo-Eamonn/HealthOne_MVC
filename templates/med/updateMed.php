@@ -1,22 +1,46 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthOne | Update Medicijnen</title>
+    <link rel="stylesheet" href="/HealthOne_MVC/assets/css/user.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+</head>
+
+<?php
+require_once "templates/header.php";
+require_once "templates/nav.php";
+?>
 <div id="medAddModal" class="modal">
     <div class="medModal-container">
         <div>
-            <span onclick="document.getElementById('medAddModal').style.display='none'" class="close" title="Sluiten">
-                <i class="fa fa-times-circle"></i>
-            </span>
-            <form action="" method="POST">
+            <form action="" method="post">
+                <button type="submit" name="cancelMed" class="close" title="Sluiten">
+                    <i class="fa fa-times-circle"></i>
+                </button>
+            </form>
+            <?php
+
+            if($id !=null && $id !=0){
+                $med = $this->model->selectMed($id);
+            }           var_dump($this->model->selectMed($id));
+            if(isset($med)){
+            echo '<form action="" method="POST">
                 <table>
-                    <input type="hidden" name="id" value='' />
+                    <input type="hidden" name="id" value="'.@$id.'" />
                     <tr>
                         <th><label for="name">Medicijn naam</label></th>
                         <th><Label for="cat">Categorie</Label></th>
                         <th><label for="insured">Verzekerd</label></th>
                     </tr>
                     <tr>
-                        <td><input type="text" autocomplete="off" name="name" value='' /></td>
+                        <td><input type="text" autocomplete="off" name="name" value="'.@$med->name.'" /></td>
                         <td>
                             <select name="cat">
-                                <option value="" disabled selected>Maak een keuze</option>
+                                <option value="'.@$med->cat.'" selected>'.@$med->cat.'</option>
                                 <option value="ADHD-middelen">ADHD-middelen</option>
                                 <option value="Alzheimer-middelen">Alzheimer-middelen</option>
                                 <option value="Anti-epileptica">Anti-epileptica</option>
@@ -44,11 +68,17 @@
                     </tr>
                     <tr>
                         <td></td>
-                        <td><input onclick="" type='submit' name='toevoegenMed' value='opslaan'></td>
+                        <td><input onclick="" type="submit" name="updateMed" value="opslaan"></td>
                         <td></td>
                     </tr>
                 </table>
-            </form>
+            </form>';
+            } else {
+                echo "Geen Patienten om te Update";
+            }?>
         </div>
     </div>
 </div>
+<?php
+require_once "templates/footer.php";
+?>

@@ -39,7 +39,7 @@ require_once "templates/nav.php";
                                     echo "<td id='" . $med->insured."'>" . $med->name . " </td>";
                                     echo "<td id='" . $med->insured."'>" . $med->cat . " </td>";
                                     echo "<td id='" . $med->insured."'>" . "<form action='' method='post'>
-                                    <button class='arts ud' type='submit' value='$med->id' name='editMed' ><i class='fa fa-pen'></i></button>
+                                    <button class='arts ud' type='submit' value='$med->id' name='showUpdateMed' ><i class='fa fa-pen'></i></button>
                                     <button class='arts ud' type='submit' value='$med->id' name='deleteMed' ><i class='fa fa-trash'></i></button>
                                 </form>" . " </td>";
                                 echo "</tr>";

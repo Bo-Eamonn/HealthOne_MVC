@@ -40,11 +40,16 @@ class Controller{
         $delMed = $this->model->deleteMed($id);
         $this->showMedAction();
     }
-    public function editMed() {
-        $id = $_POST["editMed"];
-        $med = $this->model->getMed($id);
-        $this->view->updateMed($med);
-
+    public function showUpdateMed($id=null) {
+        $this->view->showUpdateMed($id);
+    }
+    public function updateMed(){
+        $id = filter_input(INPUT_POST, 'id');
+        $name = filter_input(INPUT_POST,'name');
+        $cat = $_POST["cat"];
+        $insured = filter_input(INPUT_POST,'insured');
+        $result = $this->model->updateMed($id, $name, $cat, $insured);
+        $this->view->showMed($result);
     }
 //CRUD USER
     public function showUserAction(){

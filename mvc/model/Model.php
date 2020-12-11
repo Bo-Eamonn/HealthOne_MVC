@@ -97,7 +97,7 @@ public function getHome(){
         return $result;
     }
 //Select MED
-    public function selectMED($id){
+    public function selectMed($id){
         $this->connectDb();
         $select = $this->db->prepare("SELECT * FROM `med` WHERE `med`.`id` :id");
         $select->bindParam(":id", $id);
