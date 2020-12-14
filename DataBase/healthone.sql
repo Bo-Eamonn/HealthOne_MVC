@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 04, 2020 at 01:26 PM
+-- Generation Time: Dec 14, 2020 at 06:54 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -89,7 +89,8 @@ INSERT INTO `med` (`id`, `name`, `cat`, `insured`) VALUES
 (48, 'Litican', 'Maagdarmmiddelen', 'no'),
 (49, 'Arava', 'Overig', 'yes'),
 (50, 'Aspendos', 'Overig', 'yes'),
-(51, 'Biltricide', 'Overig', 'no');
+(51, 'Biltricide', 'Overig', 'no'),
+(97, 'Paracetamol', 'Antipsychotica', 'no');
 
 -- --------------------------------------------------------
 
@@ -115,8 +116,8 @@ CREATE TABLE `patients` (
 --
 
 INSERT INTO `patients` (`id`, `naam`, `huidigeMed`, `medHis`, `notes`, `adres`, `woonplaats`, `zknummer`, `geboortedatum`, `soortVerzekering`) VALUES
-(1, 'anton hensbergen', '', '', '', 'tinburg 12', 'VOORBURG', 'zk 222', '1-1-1970', 'all in'),
-(2, 'Bo-eamonn', '', '', '', 'johan 11', 'Hoek Van Holland', '436785', '10-11-2001', 'all in');
+(25, 'anton hensbergen', '', '', '', 'tinburg 12', 'VOORBURG', 'zk 222', '1-1-1970', 'all in'),
+(30, 'Henk de Vries', 'Ritalin', 'Amfexa', 'Meneer de Vries krijgt allergische reacties na het nemen van Amfexa en is hierdoor gestop ', 'Ambachtsweg 25c 2218 BG', 'Den Helder', '87438743', '1955-10-04', 'Basis Exclusief');
 
 -- --------------------------------------------------------
 
@@ -136,8 +137,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `uname`, `pswrd`, `role`) VALUES
-(1, 'Bo-Eamonn', '8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918', 'admin'),
-(2, 'Admin', '8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918', 'admin');
+(13, 'Admin', '8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918', 'admin'),
+(14, 'Arts', '907DECFCC13A76FABFE69870E501DFDB560C947509D7376424721716FBF54B30', 'arts'),
+(15, 'Apoth', '8CCEEB811AA2E3AD6C8D9CD972DA1FD69AD1FFFB9DC1817EAF0D1D52504C4D39', 'apoth');
 
 --
 -- Indexes for dumped tables
@@ -169,19 +171,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `med`
 --
 ALTER TABLE `med`
-  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
 
 --
 -- AUTO_INCREMENT for table `patients`
 --
 ALTER TABLE `patients`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

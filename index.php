@@ -21,7 +21,7 @@ $controller = new Controller();
         } elseif(isset($_POST['deleteMed'])) {
             $controller->deleteMed();
         } elseif(isset($_POST['showUpdateMed'])) {
-            $controller->showUpdateMed();
+            $controller->showUpdateMed($id);
         } elseif (isset($_POST['updateMed'])) {
             $controller->updateMed();
         }
